@@ -5,6 +5,33 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const supportedLanguages = ['es', 'en', 'zh']
+const createLocalePage = (page, createPage) => {
+  const {context, ...rest} = page
+  createPage({
+    ...rest,
+    context: {
+      ...context,
+      locale: process.env.LOCALE
+    }
+  })
+  if (supportedLanguages.length) {
+    supportedLanguages.forEach(code => {
+      const {path, context, ...rest} = page
+      createPage({
+        ...rest,
+        path: `/${code}${path}`,
+        // every page for each language gets the language code as a prefix
+        // to its path: "/es/blog/<some-slug>" for example
+        context: {
+          ...context,
+          locale: code
+        }
+      })
+    })
+  }
+}
+
 async function createPages (graphql, actions, reporter) {
   const {createPage} = actions
   const homePage = await graphql(`
@@ -51,9 +78,16 @@ async function createPages (graphql, actions, reporter) {
         component: require.resolve('./src/templates/project.js'),
         context: {id}
       })
+
+      createLocalePage({
+        path,
+        component: require.resolve('./src/templates/project.js'),
+        context: {id}
+      }, createPage)
     })
 }
 
 exports.createPages = async ({graphql, actions, reporter}) => {
   await createPages(graphql, actions, reporter)
+  
 }
