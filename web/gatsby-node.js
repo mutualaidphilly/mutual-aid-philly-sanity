@@ -1,23 +1,31 @@
-const {isFuture} = require('date-fns')
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-async function createProjectPages (graphql, actions, reporter) {
+async function createPages (graphql, actions, reporter) {
   const {createPage} = actions
+  const homePage = await graphql(`
+    {
+      sanitySiteConfig {
+        frontpage {
+          id
+        }
+      }
+    }
+  `)
+  const homePageID = homePage.data.sanitySiteConfig.frontpage.id
+
+  reporter.info(`Home page id is: ${homePageID}`)
   const result = await graphql(`
     {
-      allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
-        edges {
-          node {
-            id
-            publishedAt
-            slug {
-              current
-            }
-          }
+      allSanityPage(filter: {id: {ne: "${homePageID}"}}) {
+        nodes {
+          _rawTitle
+          id
+          slug
         }
       }
     }
@@ -25,16 +33,18 @@ async function createProjectPages (graphql, actions, reporter) {
 
   if (result.errors) throw result.errors
 
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
+  const pageNodes = (result.data.allSanityPage || {}).nodes || []
 
-  projectEdges
-    .filter(edge => !isFuture(edge.node.publishedAt))
-    .forEach(edge => {
-      const id = edge.node.id
-      const slug = edge.node.slug.current
-      const path = `/project/${slug}/`
+  pageNodes
+    .forEach((node) => {
+      const id = node.id
+      const slug = node.slug
+      const path = `/${slug}/`
 
-      reporter.info(`Creating project page: ${path}`)
+      reporter.info(`Page Info:`)
+      reporter.info(`Title: ${slug}`)
+      reporter.info(`Id: ${id}`)
+      reporter.info(`Creating page: ${path}`)
 
       createPage({
         path,
@@ -45,5 +55,5 @@ async function createProjectPages (graphql, actions, reporter) {
 }
 
 exports.createPages = async ({graphql, actions, reporter}) => {
-  await createProjectPages(graphql, actions, reporter)
+  await createPages(graphql, actions, reporter)
 }

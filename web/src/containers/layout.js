@@ -4,8 +4,18 @@ import Layout from '../components/layout'
 
 const query = graphql`
   query SiteTitleQuery {
-    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
+    site: sanitySiteConfig {
       title
+    }
+    routes: allSanityRoute {
+      edges {
+        node {
+          id
+          slug {
+            current
+          }
+        }
+      }
     }
   }
 `
@@ -27,13 +37,18 @@ function LayoutContainer (props) {
             'Missing "Site settings". Open the studio at http://localhost:3333 and add "Site settings" data'
           )
         }
+        console.log('site data', data.site)
+        const {site, routes} = data
+        const slugs = routes.edges.map(edge => edge.node.slug.current)
+
         return (
           <Layout
             {...props}
             showNav={showNav}
-            siteTitle={data.site.title}
+            siteTitle={site.title}
             onHideNav={handleHideNav}
             onShowNav={handleShowNav}
+            slugs={slugs}
           />
         )
       }}
