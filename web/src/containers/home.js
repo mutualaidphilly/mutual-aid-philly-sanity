@@ -7,6 +7,7 @@ import BlockContent from '../components/block-content'
 
 // import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Page from '../components/page'
 
 const HomeWrapper = props => {
   const {errors, locale, location} = props
@@ -45,10 +46,7 @@ const HomeWrapper = props => {
 
   return (
     <Layout currentLocale={locale[0]} location={location} ctas={{mainCTA: localizedData._rawMainCta, secondaryCTAs: localizedData._rawSecondaryCtAs}}>
-      <Container>
-        <h1>{title}</h1>
-        {_rawContent && <BlockContent blocks={_rawContent[0] || []} />}
-      </Container>
+      {_rawContent && <Page title={title} _rawContent={_rawContent} />}
     </Layout>
   )
 }

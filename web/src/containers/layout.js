@@ -1,6 +1,7 @@
 import {graphql, StaticQuery} from 'gatsby'
 import React, {useState} from 'react'
 import Layout from '../components/layout'
+import Fonts from './font'
 
 const query = graphql`
   query SiteConfigQuery {
@@ -45,14 +46,17 @@ function LayoutContainer (props) {
         const slugs = routes.edges.map(edge => edge.node.slug.current)
 
         return (
-          <Layout
-            {...props}
-            showNav={showNav}
-            siteTitle={site.title}
-            onHideNav={handleHideNav}
-            onShowNav={handleShowNav}
-            slugs={slugs}
-          />
+          <>
+            <Fonts />
+            <Layout
+              {...props}
+              showNav={showNav}
+              siteTitle={site.title}
+              onHideNav={handleHideNav}
+              onShowNav={handleShowNav}
+              slugs={slugs}
+            />
+          </>
         )
       }}
     />

@@ -1,0 +1,15 @@
+.heading1 {
+  composes: responsiveTitle1 from '../typography.module.css';
+}
+
+.heading2 {
+  composes: responsiveTitle2 from '../typography.module.css';
+}
+
+.heading3 {
+  composes: responsiveTitle3 from '../typography.module.css';
+}
+
+.heading4 {
+  composes: responsiveTitle4 from '../typography.module.css';
+}
