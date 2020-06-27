@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeWrapper from '../containers/home'
 
-const IndexES = () => <HomeWrapper locale={['es', 'en']} />
+const IndexEN = ({location}) => <HomeWrapper locale={['es', 'en']} location={location} />
 
-export default IndexES
+export default IndexEN

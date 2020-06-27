@@ -9,7 +9,8 @@ import BlockContent from '../components/block-content'
 import Layout from '../containers/layout'
 
 const HomeWrapper = props => {
-  const {errors, locale} = props
+  const {errors, locale, location} = props
+  
   const data = useStaticQuery(graphql`
   query IndexPageQuery {
     site:sanitySiteConfig {
@@ -41,10 +42,9 @@ const HomeWrapper = props => {
   }
 
   return (
-    <Layout currentLocale={locale[0]}>
+    <Layout currentLocale={locale[0]} location={location}>
       <Container>
         <h1>{title}</h1>
-        <p>{JSON.stringify(props)}</p>
         {_rawContent && <BlockContent blocks={_rawContent[0] || []} />}
       </Container>
     </Layout>
