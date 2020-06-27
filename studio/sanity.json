@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "Portfolio with Gatsby"
+    "name": "Mutual Aid Philly"
   },
   "api": {
     "projectId": "so4c4cf3",
-    "dataset": "production"
+    "dataset": "dev"
   },
   "plugins": [
     "@sanity/base",

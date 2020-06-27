@@ -18,6 +18,8 @@ const HomeWrapper = props => {
         _rawTitle
         _rawContent
       }
+      _rawMainCta
+    _rawSecondaryCtAs
     }    
   }
 `)
@@ -42,7 +44,7 @@ const HomeWrapper = props => {
   }
 
   return (
-    <Layout currentLocale={locale[0]} location={location}>
+    <Layout currentLocale={locale[0]} location={location} ctas={{mainCTA: localizedData._rawMainCta, secondaryCTAs: localizedData._rawSecondaryCtAs}}>
       <Container>
         <h1>{title}</h1>
         {_rawContent && <BlockContent blocks={_rawContent[0] || []} />}

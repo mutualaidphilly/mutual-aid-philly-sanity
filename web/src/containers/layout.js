@@ -3,9 +3,11 @@ import React, {useState} from 'react'
 import Layout from '../components/layout'
 
 const query = graphql`
-  query SiteTitleQuery {
+  query SiteConfigQuery {
     site: sanitySiteConfig {
       title
+      _rawMainCta
+      _rawSecondaryCtAs
     }
     routes: allSanityRoute {
       edges {
@@ -22,7 +24,7 @@ const query = graphql`
 
 function LayoutContainer (props) {
   const [showNav, setShowNav] = useState(false)
-  
+
   function handleShowNav () {
     setShowNav(true)
   }
@@ -41,7 +43,7 @@ function LayoutContainer (props) {
 
         const {site, routes} = data
         const slugs = routes.edges.map(edge => edge.node.slug.current)
-        
+
         return (
           <Layout
             {...props}

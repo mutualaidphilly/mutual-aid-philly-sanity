@@ -20,7 +20,15 @@ const createLanguageLinks = (currentLocale, currentLocation) => {
     })
 }
 
-const Header = ({onHideNav, onShowNav, showNav, siteTitle, slugs, currentLocale, location}) => (
+const createCTA = (cta, isMain) => {
+  const classes = [styles.cta]
+  if (isMain) classes.push(styles.mainCTA)
+  return <li>
+    <a href={cta.href} className={classes.join(' ')} >{cta.text}</a>
+  </li>
+}
+
+const Header = ({onHideNav, onShowNav, showNav, siteTitle, slugs, currentLocale, location, ctas}) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
       <div className={styles.branding}>
@@ -33,6 +41,10 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, slugs, currentLocale,
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>{createLanguageLinks(currentLocale, location.pathname)}</ul>
+        <ul>
+          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta))}
+          {ctas.mainCTA && createCTA(ctas.mainCTA, true)}
+        </ul>
         <ul>
           {slugs &&
             slugs.map(slug => (

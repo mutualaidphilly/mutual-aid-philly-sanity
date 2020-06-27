@@ -112,3 +112,13 @@
 .showNav {
   display: block;
 }
+
+.cta {
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+.mainCTA {
+  background-color: blue;
+}

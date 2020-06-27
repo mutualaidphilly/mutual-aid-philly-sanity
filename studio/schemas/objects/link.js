@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const LinkRender = ({ children }) => <span>{children} 🌍</span>;
+const LinkRender = ({children}) => <span>{children} 🌍</span>
 
 export default {
   title: 'URL',
@@ -8,9 +8,9 @@ export default {
   type: 'object',
   fields: [
     {
-        title : "Display Text",
-        name: "text",
-        type: "string"
+      title: 'Display Text',
+      name: 'text',
+      type: 'localeString'
     },
     {
       title: 'URL',
@@ -19,12 +19,12 @@ export default {
       validation: Rule =>
         Rule.uri({
           allowRelative: true,
-          scheme: ['https', 'http', 'mailto', 'tel'],
-        }),
-    },
+          scheme: ['https', 'http', 'mailto', 'tel']
+        })
+    }
   ],
   blockEditor: {
     icon: () => '🌍',
-    render: LinkRender,
-  },
-};
+    render: LinkRender
+  }
+}

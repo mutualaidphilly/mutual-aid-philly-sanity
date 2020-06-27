@@ -75,13 +75,13 @@ async function createPages (graphql, actions, reporter) {
 
       createPage({
         path,
-        component: require.resolve('./src/templates/project.js'),
+        component: require.resolve('./src/templates/contentPage.js'),
         context: {id}
       })
 
       createLocalePage({
         path,
-        component: require.resolve('./src/templates/project.js'),
+        component: require.resolve('./src/templates/contentPage.js'),
         context: {id}
       }, createPage)
     })
