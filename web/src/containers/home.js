@@ -1,6 +1,6 @@
 import React from 'react'
-import {graphql} from 'gatsby'
-import { localize } from '../lib/helpers'
+import {useStaticQuery, graphql} from 'gatsby'
+import {localize} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlockContent from '../components/block-content'
@@ -8,7 +8,10 @@ import BlockContent from '../components/block-content'
 // import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-export const query = graphql`
+const HomeWrapper = props => {
+  const {errors, locale, location} = props
+  
+  const data = useStaticQuery(graphql`
   query IndexPageQuery {
     site:sanitySiteConfig {
       frontpage {
@@ -17,10 +20,7 @@ export const query = graphql`
       }
     }    
   }
-`
-
-const IndexPage = props => {
-  const {data, errors} = props
+`)
   if (errors) {
     return (
       <Layout>
@@ -30,7 +30,8 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site
-  const localizedData = localize(site, ['es', 'en'])
+  const localizedData = localize(site, locale)
+  console.log('localized Data', localizedData)
   const title = localizedData.frontpage._rawTitle
   const _rawContent = localizedData.frontpage._rawContent
 
@@ -41,7 +42,7 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout>
+    <Layout currentLocale={locale[0]} location={location}>
       <Container>
         <h1>{title}</h1>
         {_rawContent && <BlockContent blocks={_rawContent[0] || []} />}
@@ -50,4 +51,4 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
+export default HomeWrapper

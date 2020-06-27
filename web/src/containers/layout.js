@@ -22,6 +22,7 @@ const query = graphql`
 
 function LayoutContainer (props) {
   const [showNav, setShowNav] = useState(false)
+  
   function handleShowNav () {
     setShowNav(true)
   }
@@ -37,10 +38,10 @@ function LayoutContainer (props) {
             'Missing "Site settings". Open the studio at http://localhost:3333 and add "Site settings" data'
           )
         }
-        console.log('site data', data.site)
+
         const {site, routes} = data
         const slugs = routes.edges.map(edge => edge.node.slug.current)
-
+        
         return (
           <Layout
             {...props}

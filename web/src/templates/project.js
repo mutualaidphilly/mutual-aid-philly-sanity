@@ -18,12 +18,13 @@ export const query = graphql`
 `
 
 const ProjectTemplate = props => {
-  const {data, errors} = props
+  const {data, errors, pageContext, location} = props
   const page = data && data.pageData
-  const localizedPage = localize(page, ['es', 'en'])
+  const localizedPage = localize(page, [pageContext.locale, 'en'])
+  
   const {_rawTitle: title, _rawContent} = localizedPage
   return (
-    <Layout>
+    <Layout currentLocale={pageContext.locale} location={location}>
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />
