@@ -6,6 +6,10 @@ html {
   line-height: var(--font-base-line-height);
 }
 
+a, button, input {
+  font-family: var(--font-family-sans);
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   background: var(--color-white);
