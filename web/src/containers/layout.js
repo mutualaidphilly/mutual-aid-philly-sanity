@@ -2,6 +2,7 @@ import {graphql, StaticQuery} from 'gatsby'
 import React, {useState} from 'react'
 import Layout from '../components/layout'
 import Fonts from './font'
+import { localize } from '../lib/helpers'
 
 const query = graphql`
   query SiteConfigQuery {
@@ -16,6 +17,9 @@ const query = graphql`
           id
           slug {
             current
+          }
+          page {
+            _rawTitle
           }
         }
       }
@@ -43,7 +47,15 @@ function LayoutContainer (props) {
         }
 
         const {site, routes} = data
-        const slugs = routes.edges.map(edge => edge.node.slug.current)
+        const localizedRoutes = localize(routes, [props.currentLocale, 'en'])
+        const slugs = localizedRoutes.edges.map(edge => {
+          return {
+            slug: edge.node.slug.current,
+            label: edge.node.page._rawTitle
+          }
+        })
+
+        console.log('slugs', slugs)
 
         return (
           <>

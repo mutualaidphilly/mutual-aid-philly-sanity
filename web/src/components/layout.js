@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './header'
+import Header from './header/header'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
