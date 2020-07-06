@@ -1,10 +1,10 @@
 import {Link} from 'gatsby'
 import React, {useState, useEffect} from 'react'
-import Icon from '../icon'
-import {cn} from '../../lib/helpers'
 
 import styles from './header.module.css'
 import MobileNav from './mobileNav'
+import DesktopNav from './desktopNav'
+
 function useWindowSize () {
   const isClient = typeof window === 'object'
 
@@ -80,7 +80,7 @@ const Header = ({
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
-        <Link to={`/${currentLocale}`}>{siteTitle}</Link>
+        
         {size.width < 450 && (
           <MobileNav
             onHideNav={onHideNav}
@@ -88,16 +88,23 @@ const Header = ({
             showNav={showNav}
             slugs={slugs}
             currentLocale={currentLocale}
-            ctaList={[
-              ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta)),
-              ctas.mainCTA && createCTA(ctas.mainCTA, true)
-            ]}
+            // ctaList={[
+            //   ...ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta)),
+            //   ctas.mainCTA && createCTA(ctas.mainCTA, true)
+            // ]}
+            ctas={ctas}
             languageList={createLanguageLinks(currentLocale, location.pathname)}
           />
         )}
         {
           size.width >= 450 && (
-            <h1>nav@</h1>
+            <DesktopNav
+              slugs={slugs}
+              currentLocale={currentLocale}
+              ctas={ctas}
+              languageList={createLanguageLinks(currentLocale, location.pathname)}
+              siteTitle={siteTitle}
+            />
           )
         }
       </div>

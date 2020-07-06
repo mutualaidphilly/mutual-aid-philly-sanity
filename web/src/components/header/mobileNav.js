@@ -4,7 +4,18 @@ import {Link} from 'gatsby'
 import Icon from '../icon'
 
 import {cn} from '../../lib/helpers'
-export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageList, ctaList}) => (
+const createCTA = (cta, isMain) => {
+  const classes = isMain ? styles.mainCTA : styles.secondaryCTA
+
+  return (
+    <li>
+      <a href={cta.href} className={classes}>
+        {cta.text}
+      </a>
+    </li>
+  )
+}
+export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageList, ctas}) => (
   <>
     <nav className={styles.mobileNavContainer}>
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
@@ -19,7 +30,8 @@ export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageLi
       </nav>
       <nav className={styles.ctaNav}>
         <ul>
-        {ctaList}
+          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta))}
+          {ctas.mainCTA && createCTA(ctas.mainCTA, true)}
         </ul>
         <ul>
           {slugs &&

@@ -1,0 +1,82 @@
+.desktopNav {
+    width: 100%;
+    
+    padding: 1rem;
+}
+
+
+.languageList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.languageList li {
+    margin-left: 1rem;
+}
+
+.languageList a {
+    text-decoration: none;
+}
+
+
+.navTop, .languageNav {
+    display: flex;
+}
+
+.navTop {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid black;
+}
+.languageNav {
+
+}
+
+.navBottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainMenu {
+
+}
+
+.ctaMenu .secondaryCTA {
+    box-shadow: inset 0 0 0 4px black;
+}
+
+.ctaList, .mainMenuList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.mainMenuList li {
+    margin-right: 36px;
+}
+
+.ctaList ul, .mainMenuList ul {
+    padding: 0;
+}
+.ctaList li {
+    margin-left: 1rem;
+}
+.ctaList a, .mainMenuList a {
+    text-decoration: none;
+}
+
+.mainCTA {
+    composes: mainCTA from '../generic/ctas.module.css';
+    padding: 9px 20px;
+}
+
+.secondaryCTA {
+    composes: secondaryCTABlack from '../generic/ctas.module.css';
+    padding: 9px 20px;
+}
+
+.mainNavItem {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+.ctaFont {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cta {
+  composes: ctaFont;
+  padding: 11px 20px;
+  margin-bottom: 16px;
+}
+
+.blueCTA {
+  color: white;
+  background-color: var(--color-cta--blue);
+}
+
+.mainCTA {
+  composes: cta;
+  composes: blueCTA;
+}
+
+.secondaryCTAWhite {
+  composes: cta;
+  color: white;
+  box-shadow: inset 0 0 0 4px white;
+}
+
+.secondaryCTA-black {
+  composes: cta;
+  color: black;
+  box-shadow: inset 0 0 0 4px black;
+}
+
+.darkCTA {
+  color: white;
+  border: none;
+  background-color: var(--color-cta--grey);
+}

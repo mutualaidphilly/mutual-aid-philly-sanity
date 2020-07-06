@@ -3,6 +3,7 @@ import Header from './header/header'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
+import BlockContent from './block-content'
 
 const Layout = ({
   children,
@@ -13,7 +14,9 @@ const Layout = ({
   slugs,
   location,
   currentLocale,
-  ctas
+  ctas,
+  footerContent,
+  contactInfo
 }) => (
   <>
     <Header
@@ -29,10 +32,20 @@ const Layout = ({
     <div className={styles.content}>{children}</div>
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
-        <div className={styles.siteInfo}>
-          © {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a> &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
+        <div className={styles.footerColumn}>
+          <h1>Contact Us</h1>
+          <nav>
+            <div>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+            </div>
+            <div>
+              <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
+            </div>
+            <ul><li>Social Icon</li><li>Social Icon</li><li>Social Icon</li></ul>
+          </nav>
+        </div>
+        <div className={styles.footerColumn}>
+          {footerContent && <BlockContent blocks={footerContent[0] || []} />}
         </div>
       </div>
     </footer>

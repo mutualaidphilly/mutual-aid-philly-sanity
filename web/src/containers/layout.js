@@ -10,6 +10,11 @@ const query = graphql`
       title
       _rawMainCta
       _rawSecondaryCtAs
+      _rawFooterContent
+      contact {
+        email
+        phone
+      }
     }
     routes: allSanityRoute {
       edges {
@@ -47,6 +52,7 @@ function LayoutContainer (props) {
         }
 
         const {site, routes} = data
+        const localizedSite = localize(site, [props.currentLocale, 'en'])
         const localizedRoutes = localize(routes, [props.currentLocale, 'en'])
         const slugs = localizedRoutes.edges.map(edge => {
           return {
@@ -63,9 +69,11 @@ function LayoutContainer (props) {
             <Layout
               {...props}
               showNav={showNav}
-              siteTitle={site.title}
+              siteTitle={localizedSite.title}
               onHideNav={handleHideNav}
               onShowNav={handleShowNav}
+              footerContent={localizedSite._rawFooterContent}
+              contactInfo={localizedSite.contact}
               slugs={slugs}
             />
           </>

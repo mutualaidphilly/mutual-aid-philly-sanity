@@ -20,7 +20,7 @@ const HomeWrapper = props => {
         _rawContent
       }
       _rawMainCta
-    _rawSecondaryCtAs
+      _rawSecondaryCtAs
     }    
   }
 `)
