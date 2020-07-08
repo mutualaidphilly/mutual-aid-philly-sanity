@@ -34,7 +34,7 @@ const Layout = ({
       <div className={styles.footerWrapper}>
         <div className={styles.footerColumn}>
           <h1>Contact Us</h1>
-          <nav>
+          {contactInfo && <nav>
             <div>
               <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
             </div>
@@ -42,7 +42,7 @@ const Layout = ({
               <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
             </div>
             <ul><li>Social Icon</li><li>Social Icon</li><li>Social Icon</li></ul>
-          </nav>
+          </nav>}
         </div>
         <div className={styles.footerColumn}>
           {footerContent && <BlockContent blocks={footerContent[0] || []} />}

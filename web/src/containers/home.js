@@ -34,7 +34,6 @@ const HomeWrapper = props => {
 
   const site = (data || {}).site
   const localizedData = localize(site, locale)
-  console.log('localized Data', localizedData)
   const title = localizedData.frontpage._rawTitle
   const _rawContent = localizedData.frontpage._rawContent
 

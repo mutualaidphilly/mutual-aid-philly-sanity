@@ -61,8 +61,6 @@ function LayoutContainer (props) {
           }
         })
 
-        console.log('slugs', slugs)
-
         return (
           <>
             <Fonts />

@@ -4,7 +4,6 @@ import clientConfig from '../../client-config'
 import serializers from './serializers'
 
 const BlockContent = ({blocks}) => {
-  console.log('block data', blocks)
   return <BaseBlockContent blocks={blocks} serializers={serializers} {...clientConfig.sanity} />
 }
 
