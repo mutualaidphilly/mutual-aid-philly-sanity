@@ -2,6 +2,11 @@ import BaseBlockContent from '@sanity/block-content-to-react'
 import Figure from './figure'
 import React from 'react'
 import * as Headings from './generic/heading'
+import ArrowLink from './arrowLink/arrowLink.jsx'
+
+const arrowLink = props => {
+  return <ArrowLink {...props.mark} />
+}
 
 const serializers = {
   types: {
@@ -18,11 +23,16 @@ const serializers = {
           return <Headings.StyledH3 children={props.children} />
         case 'h4':
           return <Headings.StyledH4 children={props.children} />
+        case 'arrowLink':
+          return <a href='https://google.com'>{props.text} -></a>
         default:
           // Fall back to default handling
           return BaseBlockContent.defaultSerializers.types.block(props)
       }
     }
+  },
+  marks: {
+    arrowLink
   }
 }
 

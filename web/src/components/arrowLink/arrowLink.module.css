@@ -1,0 +1,25 @@
+.arrowLink {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.arrowLink a {
+    text-decoration: none;
+}
+
+.arrowLink .arrowContainer {
+    display: inline-flex;
+}
+
+.arrowLink .arrowContainer svg {
+    fill: none;
+    stroke: #1743DD;
+    transform: translateX(0);
+    transition: transform 250ms ease-out;
+}
+
+.arrowLink:hover svg {
+    stroke: black;
+    transform: translateX(5px);
+}
