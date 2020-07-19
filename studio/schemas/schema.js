@@ -13,6 +13,7 @@ import siteConfig from './documents/siteConfig'
 import localeString from './objects/localeString'
 import localeBlock from './objects/localeBlock'
 import link from './objects/link'
+import arrowLink from './objects/arrowLink'
 import socialMediaLink from './objects/socialMediaLink'
 import contact from './objects/contact'
 
@@ -26,6 +27,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     link,
+    arrowLink,
     socialMediaLink,
     localeString,
     localeBlock,
