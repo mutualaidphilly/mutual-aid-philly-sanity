@@ -24,10 +24,8 @@ export default {
       type: 'array',
       title: 'Page sections',
       of: [
-        {type: 'localeBlock'}
-        //   { type: 'imageSection' },
-        //   { type: 'mailchimp' },
-        //   { type: 'textSection' },
+        {type: 'localeBlock'},
+        {type: 'twoColumnContent'}
       ]
     },
     {

@@ -3,6 +3,7 @@ import Figure from './figure'
 import React from 'react'
 import * as Headings from './generic/heading'
 import ArrowLink from './arrowLink/arrowLink.jsx'
+import TwoColumnContent from './twoColumnContent/twoColumnContent'
 
 const arrowLink = props => {
   return <ArrowLink {...props.mark} />
@@ -12,6 +13,7 @@ const serializers = {
   types: {
     figure: Figure,
     block: props => {
+      console.log('serializer', props)
       const {style = 'normal'} = props.node
       switch (style) {
         case 'title':
@@ -23,8 +25,6 @@ const serializers = {
           return <Headings.StyledH3 children={props.children} />
         case 'h4':
           return <Headings.StyledH4 children={props.children} />
-        case 'arrowLink':
-          return <a href='https://google.com'>{props.text} -></a>
         default:
           // Fall back to default handling
           return BaseBlockContent.defaultSerializers.types.block(props)
@@ -34,6 +34,15 @@ const serializers = {
   marks: {
     arrowLink
   }
+}
+
+serializers.types.twoColumnContent = props => {
+  console.log('props tho!', props)
+  return (<TwoColumnContent
+    columnOneContent={props.node.ColumnOne.flat()}
+    columnTwoContent={props.node.ColumnTwo.flat()}
+  />
+  )
 }
 
 export default serializers
