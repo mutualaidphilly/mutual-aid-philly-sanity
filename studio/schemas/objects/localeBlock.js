@@ -1,5 +1,4 @@
 import Tabs from 'sanity-plugin-tabs'
-import React from 'react'
 import supportedLanguages from './locales'
 import {StyledH1} from '../../../web/src/components/generic/heading'
 

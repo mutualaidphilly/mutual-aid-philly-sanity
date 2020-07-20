@@ -12,6 +12,7 @@ import siteConfig from './documents/siteConfig'
 // Object types
 import localeString from './objects/localeString'
 import localeBlock from './objects/localeBlock'
+import twoColumnContent from './objects/twoColumnContent'
 import link from './objects/link'
 import arrowLink from './objects/arrowLink'
 import socialMediaLink from './objects/socialMediaLink'
@@ -32,6 +33,7 @@ export default createSchema({
     localeString,
     localeBlock,
     contact,
+    twoColumnContent,
     // The following are document types which will appear
     // in the studio.
     route,
