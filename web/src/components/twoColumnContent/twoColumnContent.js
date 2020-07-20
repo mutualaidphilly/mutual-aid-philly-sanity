@@ -5,10 +5,10 @@ import styles from './twoColumnContent.module.css'
 function TwoColumnContent ({columnOneContent, columnTwoContent}) {
   return (
     <div className={styles.twoColumnContentContainer}>
-      <div style={{backgroundColor: 'red'}}>
+      <div className={styles.column}>
         <BlockContent blocks={columnOneContent} />
       </div>
-      <div style={{backgroundColor: 'blue'}}>
+      <div className={styles.column}>
         <BlockContent blocks={columnTwoContent} />
       </div>
     </div>
