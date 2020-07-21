@@ -1,12 +1,16 @@
+@import '../../styles/custom-media.css';
 .twoColumnContentContainer {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;
-
+    @media (--media-min-medium) {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
 }
 
 .column {
-    width: 45%;
+    @media (--media-min-medium) {
+        width: 45%;
+    }
 }
