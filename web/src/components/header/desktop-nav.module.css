@@ -58,6 +58,10 @@
     padding: 0;
 }
 .ctaList li {
+    /* Offset for box shadow border */
+    margin-left: -4px;
+}
+.ctaList li:last-child {
     margin-left: 1rem;
 }
 .ctaList a, .mainMenuList a {

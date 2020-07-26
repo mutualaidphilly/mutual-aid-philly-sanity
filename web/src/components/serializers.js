@@ -29,7 +29,8 @@ const serializers = {
           // Fall back to default handling
           return BaseBlockContent.defaultSerializers.types.block(props)
       }
-    }
+    },
+    hr: () => <hr />
   },
   marks: {
     arrowLink

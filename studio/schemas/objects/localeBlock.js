@@ -41,9 +41,12 @@ export default {
             {title: 'Emphasis', value: 'em'},
             {title: 'Code', value: 'code'}
           ],
-          annotations: [{type: 'arrowLink'}]
+          annotations: [
+            {type: 'arrowLink'}
+          ]
         }
-      }
+      },
+      {type: 'hr'}
     ],
     fieldset: lang.id
   }))

@@ -23,3 +23,8 @@ body > div,
 body > div > div {
   height: 100%;
 }
+
+hr {
+  border: 0;
+  border-bottom: 3px solid black;
+}
