@@ -16,16 +16,14 @@ const query = graphql`
         phone
       }
     }
-    routes: allSanityRoute {
-      edges {
-        node {
-          id
-          slug {
-            current
-          }
-          page {
-            _rawTitle
-          }
+    routes: sanitySiteConfig {
+      mainNavigation {
+        id
+        slug {
+          current
+        }
+        page {
+          _rawTitle
         }
       }
     }
@@ -54,10 +52,10 @@ function LayoutContainer (props) {
         const {site, routes} = data
         const localizedSite = localize(site, [props.currentLocale, 'en'])
         const localizedRoutes = localize(routes, [props.currentLocale, 'en'])
-        const slugs = localizedRoutes.edges.map(edge => {
+        const slugs = localizedRoutes.mainNavigation.map(navItem => {
           return {
-            slug: edge.node.slug.current,
-            label: edge.node.page._rawTitle
+            slug: navItem.slug.current,
+            label: navItem.page._rawTitle
           }
         })
 
