@@ -3,7 +3,7 @@ import supportedLanguages from './locales'
 import {StyledH1} from '../../../web/src/components/generic/heading'
 
 export default {
-  title: 'title',
+  title: 'Content',
   name: 'localeBlock',
   type: 'object',
   inputComponent: Tabs,

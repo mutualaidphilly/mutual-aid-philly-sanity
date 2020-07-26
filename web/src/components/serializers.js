@@ -38,7 +38,6 @@ const serializers = {
 }
 
 serializers.types.twoColumnContent = props => {
-  console.log('props tho!', props)
   return (<TwoColumnContent
     columnOneContent={props.node.ColumnOne.flat()}
     columnTwoContent={props.node.ColumnTwo.flat()}
