@@ -59,7 +59,7 @@
     @nest & .mainCTA {
       background-color: var(--color-cta--grey);
     }
-    position: absolute;
+    position: fixed;
     background: var(--color-white);
     color: var(--color-black);
     left: 0;

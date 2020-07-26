@@ -15,13 +15,17 @@ const createCTA = (cta, isMain) => {
     </li>
   )
 }
+
+function scrollToTop () {
+  document.body.scrollTop = document.documentElement.scrollTop = 0
+}
 export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageList, ctas}) => (
   <>
     <nav className={styles.mobileNavContainer}>
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
         Menu
       </button>
-      <button className={cn(styles.darkCTA, styles.backToTopButton)}>Back to Top</button>
+      <button type='button' onClick={scrollToTop} className={cn(styles.darkCTA, styles.backToTopButton)}>Back to Top</button>
     </nav>
 
     <nav className={cn(styles.nav, showNav && styles.showNav)}>
@@ -34,6 +38,12 @@ export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageLi
           {ctas.mainCTA && createCTA(ctas.mainCTA, true)}
         </ul>
         <ul>
+          <li key='home'>
+            <Link to={`/${currentLocale}`} className={styles.pageLink}>
+              <span>Home</span>
+              <Icon symbol='left-arrow' />
+            </Link>
+          </li>
           {slugs &&
             slugs.map(slug => (
               <li key={slug}>
