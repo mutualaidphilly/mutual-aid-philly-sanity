@@ -16,6 +16,7 @@ export default {
     },
     {
       name: 'slug',
+      description: 'No beginning or trailing slash ( / )',
       type: 'string',
       title: 'URL Slug'
     },
