@@ -15,6 +15,7 @@ import localeBlock from './objects/localeBlock'
 import twoColumnContent from './objects/twoColumnContent'
 import link from './objects/link'
 import arrowLink from './objects/arrowLink'
+import externalLink from './objects/externalLink'
 import hr from './objects/hr'
 import socialMediaLink from './objects/socialMediaLink'
 import contact from './objects/contact'
@@ -29,6 +30,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     link,
+    externalLink,
     arrowLink,
     hr,
     socialMediaLink,

@@ -1,10 +1,6 @@
-import React from 'react'
-
-const LinkRender = ({children}) => <span>{children} -></span>
-
 export default {
   title: 'URL',
-  name: 'arrowLink',
+  name: 'externalLink',
   type: 'object',
   fields: [
     {
@@ -19,7 +15,6 @@ export default {
     }
   ],
   blockEditor: {
-    icon: () => '🌍->',
-    render: LinkRender
+    icon: () => '🔗'
   }
 }

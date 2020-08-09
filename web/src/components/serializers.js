@@ -5,8 +5,8 @@ import * as Headings from './generic/heading'
 import ArrowLink from './arrowLink/arrowLink.jsx'
 import TwoColumnContent from './twoColumnContent/twoColumnContent'
 
-const arrowLink = props => {
-  return <ArrowLink {...props.mark} />
+const arrowLink = ({mark, children}) => {
+  return <ArrowLink href={mark.href}>{children}</ArrowLink>
 }
 
 const serializers = {
@@ -33,7 +33,13 @@ const serializers = {
     hr: () => <hr />
   },
   marks: {
-    arrowLink
+    arrowLink,
+    externalLink: ({mark, children}) => {
+      const {blank, href} = mark
+      return blank
+        ? <a href={href} target='_blank' rel='noopener'>{children}</a>
+        : <a href={href}>{children}</a>
+    }
   }
 }
 

@@ -34,6 +34,7 @@ export default {
             {title: 'Code', value: 'code'}
           ],
           annotations: [
+            {type: 'externalLink'},
             {type: 'arrowLink'}
           ]
         }
