@@ -35,7 +35,8 @@ export function buildImageObj (source) {
 export function localize (value, languages) {
   if (Array.isArray(value)) {
     return value.map(v => localize(v, languages))
-  } else if (typeof value == 'object') {
+  } else if (value && typeof value == 'object') {
+    console.log(value)
     if (/^locale[A-Z]/.test(value._type)) {
       const language = languages.find(lang => value[lang])
       return value[language]
