@@ -1,13 +1,11 @@
 import React from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
 import {localize} from '../lib/helpers'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import BlockContent from '../components/block-content'
 
-// import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Page from '../components/page'
+import SEO from '../components/seo'
 
 const HomeWrapper = props => {
   const {errors, locale, location} = props
@@ -44,9 +42,12 @@ const HomeWrapper = props => {
   }
 
   return (
-    <Layout currentLocale={locale[0]} location={location} ctas={{mainCTA: localizedData._rawMainCta, secondaryCTAs: localizedData._rawSecondaryCtAs}}>
-      {_rawContent && <Page title={title} _rawContent={_rawContent} />}
-    </Layout>
+    <>
+      <SEO />
+      <Layout currentLocale={locale[0]} location={location} ctas={{mainCTA: localizedData._rawMainCta, secondaryCTAs: localizedData._rawSecondaryCtAs}}>
+        {_rawContent && <Page title={title} _rawContent={_rawContent} />}
+      </Layout>
+    </>
   )
 }
 

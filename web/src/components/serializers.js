@@ -13,7 +13,6 @@ const serializers = {
   types: {
     figure: Figure,
     block: props => {
-      console.log('serializer', props)
       const {style = 'normal'} = props.node
       switch (style) {
         case 'title':

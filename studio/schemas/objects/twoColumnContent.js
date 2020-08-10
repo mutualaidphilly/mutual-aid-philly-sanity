@@ -26,7 +26,6 @@ export default {
       columnTwo: 'ColumnTwo.0.en.0.children.0.text'
     },
     prepare (selection) {
-      console.log('selection', selection)
       return {
         title: `Columns: | ${selection.columnOne}  ||  ${selection.columnTwo} |`
       }

@@ -5,7 +5,7 @@ const createCTA = (cta, isMain) => {
   const classes = isMain ? styles.mainCTA : styles.secondaryCTA
 
   return (
-    <li>
+    <li key={cta.href}>
       <a href={cta.href} className={classes}>
         {cta.text}
       </a>
@@ -28,7 +28,7 @@ export default ({slugs, currentLocale, languageList, ctas, siteTitle}) => {
         <ul className={styles.mainMenuList}>
           {slugs &&
         slugs.map(slug => (
-          <li key={slug}>
+          <li key={slug.label}>
             <Link to={`/${currentLocale}/${slug.slug}/`} className={styles.mainNavItem}>
               <span>{slug.label}</span>
             </Link>

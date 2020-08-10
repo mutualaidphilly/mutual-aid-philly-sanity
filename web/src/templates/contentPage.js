@@ -3,15 +3,16 @@ import {graphql} from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Page from '../components/page'
-// import SEO from '../components/seo'
+import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import {localize} from '../lib/helpers'
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
     pageData: sanityPage(id: { eq: $id }) {
-      _rawTitle
       id
+      description
+      _rawTitle
       _rawContent
     }
     site:sanitySiteConfig {
@@ -29,14 +30,17 @@ const ProjectTemplate = props => {
   
   const {_rawTitle: title, _rawContent} = localizedPage
   return (
-    <Layout currentLocale={pageContext.locale} location={location} ctas={{mainCTA: localizedSite._rawMainCta, secondaryCTAs: localizedSite._rawSecondaryCtAs}}>
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
-      {localizedPage && <Page title={title} _rawContent={_rawContent} />}
-    </Layout>
+    <>
+      <SEO description={localizedPage.description} lang={pageContext.locale} title={title} />
+      <Layout currentLocale={pageContext.locale} location={location} ctas={{mainCTA: localizedSite._rawMainCta, secondaryCTAs: localizedSite._rawSecondaryCtAs}}>
+        {errors && (
+          <Container>
+            <GraphQLErrorList errors={errors} />
+          </Container>
+        )}
+        {localizedPage && <Page title={title} _rawContent={_rawContent} />}
+      </Layout>
+    </>
   )
 }
 
