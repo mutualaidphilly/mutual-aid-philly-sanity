@@ -10,13 +10,15 @@ function SEO ({description, lang, meta, keywords, title}) {
       render={data => {
         const metaDescription = description || (data.site && data.site.description) || ''
         const siteTitle = (data.site && data.site.title) || ''
-
+        const siteLang = lang ? lang : 'en'
+        console.log({lang})
         return (
           <Helmet
             titleTemplate={`%s - ${siteTitle}`}
             defaultTitle={siteTitle}
             title={title}
           >
+            <html lang={siteLang} />
             <meta name='description' content={metaDescription} />
             <meta name='og:title' content={siteTitle} />
             <meta name='og:description' content={metaDescription} />
@@ -24,51 +26,7 @@ function SEO ({description, lang, meta, keywords, title}) {
             <meta name='twitter:title' content={siteTitle} />
             <meta name='twitter:description' content={metaDescription} />
             <meta name='twitter:card' content='summary' />
-        </Helmet>
-        //   <Helmet
-        //     // htmlAttributes={{lang}}
-        //     title={siteTitle}
-        //     titleTemplate={title === siteTitle ? '%s' : `%s | ${siteTitle}`}
-        //     meta={[
-        //       {
-        //         name: 'description',
-        //         content: metaDescription
-        //       },
-        //       {
-        //         property: 'og:title',
-        //         content: title
-        //       },
-        //       {
-        //         property: 'og:description',
-        //         content: metaDescription
-        //       },
-        //       {
-        //         property: 'og:type',
-        //         content: 'website'
-        //       },
-        //       {
-        //         name: 'twitter:card',
-        //         content: 'summary'
-        //       },
-        //       {
-        //         name: 'twitter:title',
-        //         content: title
-        //       },
-        //       {
-        //         name: 'twitter:description',
-        //         content: metaDescription
-        //       }
-        //     ]
-        //       .concat(
-        //         keywords && keywords.length > 0
-        //           ? {
-        //             name: 'keywords',
-        //             content: keywords.join(', ')
-        //           }
-        //           : []
-        //       )
-        //       .concat(meta)}
-        //   />
+          </Helmet>
         )
       }}
     />
