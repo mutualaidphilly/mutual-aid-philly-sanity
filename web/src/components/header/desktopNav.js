@@ -17,14 +17,14 @@ export default ({slugs, currentLocale, languageList, ctas, siteTitle}) => {
 
     <div className={styles.navTop}>
       <Link to={`/${currentLocale}`}>{siteTitle}</Link>
-      <nav className={styles.languageNav}>
+      <nav className={styles.languageNav} aria-label='Language Selection'>
         <ul className={styles.languageList}>
           {languageList}
         </ul>
       </nav>
     </div>
     <div className={styles.navBottom}>
-      <nav className={styles.mainMenu}>
+      <nav className={styles.mainMenu} aria-label='Main Menu'>
         <ul className={styles.mainMenuList}>
           {slugs &&
         slugs.map(slug => (
@@ -36,7 +36,7 @@ export default ({slugs, currentLocale, languageList, ctas, siteTitle}) => {
         ))}
         </ul>
       </nav>
-      <nav className={styles.ctaMenu}>
+      <nav className={styles.ctaMenu} aria-label='Help Mutual Aid Philly'>
         <ul className={styles.ctaList}>
           {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta))}
           {ctas.mainCTA && createCTA(ctas.mainCTA, true)}
