@@ -10,6 +10,7 @@ function ArrowLink ({href, children}) {
           width='33'
           height='20'
           viewBox='0 0 33 33'
+          aria-hidden='true'
         >
           <path
             d='M21.5771 24.8493L30.2842 16.1422M30.2842 16.1422L21.5216 7.37959M30.2842 16.1422L1.99995 16.1422'
