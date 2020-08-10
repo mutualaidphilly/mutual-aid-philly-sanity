@@ -10,8 +10,8 @@ function SEO ({description, lang, meta, keywords, title}) {
       render={data => {
         const metaDescription = description || (data.site && data.site.description) || ''
         const siteTitle = (data.site && data.site.title) || ''
-        const siteLang = lang ? lang : 'en'
-        console.log({lang})
+        const siteLang = lang || 'en'
+
         return (
           <Helmet
             titleTemplate={`%s - ${siteTitle}`}
