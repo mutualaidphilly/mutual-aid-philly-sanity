@@ -27,8 +27,8 @@ const ProjectTemplate = props => {
   const localizedData = localize(data, [pageContext.locale, 'en'])
   const localizedPage = localizedData && localizedData.pageData
   const localizedSite = localizedData && localizedData.site
-  
   const {_rawTitle: title, _rawContent} = localizedPage
+
   return (
     <>
       <SEO description={localizedPage.description} lang={pageContext.locale} title={title} />

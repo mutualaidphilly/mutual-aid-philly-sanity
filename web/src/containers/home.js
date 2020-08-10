@@ -43,7 +43,7 @@ const HomeWrapper = props => {
 
   return (
     <>
-      <SEO />
+      <SEO lang={locale[0]} />
       <Layout currentLocale={locale[0]} location={location} ctas={{mainCTA: localizedData._rawMainCta, secondaryCTAs: localizedData._rawSecondaryCtAs}}>
         {_rawContent && <Page title={title} _rawContent={_rawContent} />}
       </Layout>
