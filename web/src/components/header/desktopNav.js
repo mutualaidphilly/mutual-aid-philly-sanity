@@ -16,7 +16,7 @@ export default ({slugs, currentLocale, languageList, ctas, siteTitle}) => {
   return (<nav className={styles.desktopNav}>
 
     <div className={styles.navTop}>
-      <Link to={`/${currentLocale}`}>{siteTitle}</Link>
+      <Link to={`/${currentLocale}`} className={styles.navTitle}>{siteTitle}</Link>
       <nav className={styles.languageNav} aria-label='Language Selection'>
         <ul className={styles.languageList}>
           {languageList}
