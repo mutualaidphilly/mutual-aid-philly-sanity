@@ -68,7 +68,7 @@
  * Responsively sized elements
  */
 
-.paragraph {
+:global(p) {
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   margin: 0.5rem 0 1rem 0;

@@ -54,18 +54,6 @@ const createLanguageLinks = (currentLocale, currentLocation) => {
     })
 }
 
-const createCTA = (cta, isMain) => {
-  const classes = isMain ? styles.mainCTA : styles.secondaryCTA
-
-  return (
-    <li>
-      <a href={cta.href} className={classes}>
-        {cta.text}
-      </a>
-    </li>
-  )
-}
-
 const Header = ({
   onHideNav,
   onShowNav,
@@ -77,27 +65,25 @@ const Header = ({
   ctas
 }) => {
   const size = useWindowSize()
+  // eslint-disable-next-line no-undef
+  const mobileBreakSize = 600
+
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
-        
-        {size.width < 450 && (
+        {size.width < mobileBreakSize && (
           <MobileNav
             onHideNav={onHideNav}
             onShowNav={onShowNav}
             showNav={showNav}
             slugs={slugs}
             currentLocale={currentLocale}
-            // ctaList={[
-            //   ...ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta)),
-            //   ctas.mainCTA && createCTA(ctas.mainCTA, true)
-            // ]}
             ctas={ctas}
             languageList={createLanguageLinks(currentLocale, location.pathname)}
           />
         )}
         {
-          size.width >= 450 && (
+          size.width >= mobileBreakSize && (
             <DesktopNav
               slugs={slugs}
               currentLocale={currentLocale}

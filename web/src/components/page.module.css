@@ -24,11 +24,6 @@
   }
 }
 
-.grid {
-  @media (--media-min-medium) {
-  }
-}
-
 .mainContent {
   @nest & a {
     color: var(--color-cta--blue);
