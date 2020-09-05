@@ -84,5 +84,10 @@
 }
 
 .siteTitleLink {
-    
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.siteTitleLink:visited {
+    color: inherit;
 }
