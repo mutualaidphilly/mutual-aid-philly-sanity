@@ -3,7 +3,7 @@ import Header from './header/header'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
-import BlockContent from './block-content'
+import Footer from './footer/Footer'
 
 const Layout = ({
   children,
@@ -30,25 +30,7 @@ const Layout = ({
       ctas={ctas}
     />
     <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.footerColumn}>
-          <h1>Contact Us</h1>
-          {contactInfo && <nav>
-            <div>
-              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-            </div>
-            <div>
-              <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
-            </div>
-            <ul><li>Social Icon</li><li>Social Icon</li><li>Social Icon</li></ul>
-          </nav>}
-        </div>
-        <div className={styles.footerColumn}>
-          {footerContent && <BlockContent blocks={footerContent[0] || []} />}
-        </div>
-      </div>
-    </footer>
+    <Footer contactInfo={contactInfo} footerContent={footerContent} />
   </>
 )
 

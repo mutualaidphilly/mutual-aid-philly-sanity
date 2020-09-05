@@ -75,10 +75,6 @@ const Header = ({
             showNav={showNav}
             slugs={slugs}
             currentLocale={currentLocale}
-            // ctaList={[
-            //   ...ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta)),
-            //   ctas.mainCTA && createCTA(ctas.mainCTA, true)
-            // ]}
             ctas={ctas}
             languageList={createLanguageLinks(currentLocale, location.pathname)}
           />
