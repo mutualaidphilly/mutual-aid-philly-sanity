@@ -9,7 +9,8 @@ function Footer ({contactInfo, footerContent}) {
   const socialLinksList = [
     {
       href: 'https://www.facebook.com/mutualaidphilly/',
-      SocialIcon: FacebookIcon
+      SocialIcon: FacebookIcon,
+      label: 'Mutual Aid Philly Facebook'
     },
     // {
     //   href: 'https://www.facebook.com/mutualaidphilly/',
@@ -17,9 +18,23 @@ function Footer ({contactInfo, footerContent}) {
     // },
     {
       href: 'https://www.instagram.com/mutualaidphilly/',
-      SocialIcon: InstagramIcon
+      SocialIcon: InstagramIcon,
+      label: 'Mutual Aid Philly Instagram'
     }
-  ].map((item, index) => <li key={index} className={styles.socialIconList__Item}><a href={item.href} target='_blank' rel='noopener'><item.SocialIcon /></a></li>)
+  ].map((item, index) => (
+    <li key={index} className={styles.socialIconList__Item}>
+      <a href={item.href} target='_blank' rel='noopener'>
+        <span style={{
+          position: 'absolute',
+          left: '-10000px',
+          top: 'auto',
+          width: '1px',
+          height: '1px',
+          overflow: 'hidden'
+        }}>{item.label}</span>
+        <item.SocialIcon />
+      </a>
+    </li>))
   return (
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
@@ -33,7 +48,7 @@ function Footer ({contactInfo, footerContent}) {
               <div>
                 <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
               </div>
-              <ul className={styles.socialIconList}>
+              <ul className={styles.socialIconList} aria-label='Social media links'>
                 {socialLinksList}
               </ul>
             </nav>
