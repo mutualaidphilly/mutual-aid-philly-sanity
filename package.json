@@ -16,5 +16,8 @@
   "devDependencies": {
     "lerna": "^3.22.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gatsby-plugin-robots-txt": "^1.5.1",
+    "gatsby-plugin-sitemap": "^2.4.12"
+  }
 }
