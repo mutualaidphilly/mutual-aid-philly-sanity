@@ -54,18 +54,6 @@ const createLanguageLinks = (currentLocale, currentLocation) => {
     })
 }
 
-const createCTA = (cta, isMain) => {
-  const classes = isMain ? styles.mainCTA : styles.secondaryCTA
-
-  return (
-    <li>
-      <a href={cta.href} className={classes}>
-        {cta.text}
-      </a>
-    </li>
-  )
-}
-
 const Header = ({
   onHideNav,
   onShowNav,
@@ -80,8 +68,7 @@ const Header = ({
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
-        
-        {size.width < 450 && (
+        {size.width < 800 && (
           <MobileNav
             onHideNav={onHideNav}
             onShowNav={onShowNav}
@@ -97,7 +84,7 @@ const Header = ({
           />
         )}
         {
-          size.width >= 450 && (
+          size.width >= 800 && (
             <DesktopNav
               slugs={slugs}
               currentLocale={currentLocale}
