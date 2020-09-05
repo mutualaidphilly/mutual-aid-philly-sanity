@@ -8,7 +8,7 @@ const renderOneOrMoreBlocks = rawContent => {
 function Page (props) {
   const {_rawContent, title} = props
   return (
-    <article className={styles.root}>
+    <main className={styles.root}>
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
@@ -16,7 +16,7 @@ function Page (props) {
           </div>
         </div>
       </Container>
-    </article>
+    </main>
   )
 }
 

@@ -2,3 +2,5 @@
 @custom-media --media-max-small (max-width: 499px);
 @custom-media --media-min-medium (min-width: 675px);
 @custom-media --media-min-large (min-width: 900px);
+@custom-media --media-nav-breakpoint (min-width: 800px);
+@custom-media --media-nav-breakpoint-max (max-width: 799px);

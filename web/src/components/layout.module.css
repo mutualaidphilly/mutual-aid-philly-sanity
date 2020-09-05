@@ -14,6 +14,17 @@
   background-color: #FBECD7;
 }
 
+.socialIconList {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.socialIconList__Item {
+  margin-right: 2.75rem;
+}
+
 .footer hr {
   border-bottom: 4px solid black;
 }
