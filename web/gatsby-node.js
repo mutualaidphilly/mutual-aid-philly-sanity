@@ -1,4 +1,3 @@
-
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -7,29 +6,19 @@
 
 const supportedLanguages = ['es', 'en', 'zh']
 const createLocalePage = (page, createPage) => {
-  const {context, ...rest} = page
-  createPage({
-    ...rest,
-    context: {
-      ...context,
-      locale: process.env.LOCALE
-    }
-  })
-  if (supportedLanguages.length) {
-    supportedLanguages.forEach(code => {
-      const {path, context, ...rest} = page
-      createPage({
-        ...rest,
-        path: `/${code}${path}`,
-        // every page for each language gets the language code as a prefix
-        // to its path: "/es/blog/<some-slug>" for example
-        context: {
-          ...context,
-          locale: code
-        }
-      })
+  supportedLanguages.forEach(code => {
+    const {path, context, ...rest} = page
+    createPage({
+      ...rest,
+      path: `/${code}${path}`,
+      // every page for each language gets the language code as a prefix
+      // to its path: "/es/blog/<some-slug>" for example
+      context: {
+        ...context,
+        locale: code
+      }
     })
-  }
+  })
 }
 
 async function createPages (graphql, actions, reporter) {
@@ -62,32 +51,27 @@ async function createPages (graphql, actions, reporter) {
 
   const pageNodes = (result.data.allSanityPage || {}).nodes || []
 
-  pageNodes
-    .forEach((node) => {
-      const id = node.id
-      const slug = node.slug
-      const path = `/${slug}/`
+  pageNodes.forEach(node => {
+    const id = node.id
+    const slug = node.slug
+    const path = `/${slug}/`
 
-      reporter.info(`Page Info:`)
-      reporter.info(`Title: ${slug}`)
-      reporter.info(`Id: ${id}`)
-      reporter.info(`Creating page: ${path}`)
+    reporter.info(`Page Info:`)
+    reporter.info(`Title: ${slug}`)
+    reporter.info(`Id: ${id}`)
+    reporter.info(`Creating page: ${path}`)
 
-      createPage({
+    createLocalePage(
+      {
         path,
         component: require.resolve('./src/templates/contentPage.js'),
         context: {id}
-      })
-
-      createLocalePage({
-        path,
-        component: require.resolve('./src/templates/contentPage.js'),
-        context: {id}
-      }, createPage)
-    })
+      },
+      createPage
+    )
+  })
 }
 
 exports.createPages = async ({graphql, actions, reporter}) => {
   await createPages(graphql, actions, reporter)
-  
 }

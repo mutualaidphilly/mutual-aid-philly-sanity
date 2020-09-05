@@ -10,6 +10,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://mutualaidphilly.com',
     languages: {
       langs: ['en', 'es', 'zh'],
       defaultLangKey: 'en'
@@ -18,6 +19,8 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-sanity',
       options: {
