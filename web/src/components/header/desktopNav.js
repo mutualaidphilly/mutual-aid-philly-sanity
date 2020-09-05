@@ -1,17 +1,8 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import styles from './desktop-nav.module.css'
-const createCTA = (cta, isMain) => {
-  const classes = isMain ? styles.mainCTA : styles.secondaryCTA
+import BigCTA from './bigCTAs'
 
-  return (
-    <li key={cta.href}>
-      <a href={cta.href} className={classes}>
-        {cta.text}
-      </a>
-    </li>
-  )
-}
 export default ({slugs, currentLocale, languageList, ctas, siteTitle}) => {
   return (<nav className={styles.desktopNav}>
 
@@ -38,8 +29,8 @@ export default ({slugs, currentLocale, languageList, ctas, siteTitle}) => {
       </nav>
       <nav className={styles.ctaMenu} aria-label='Help Mutual Aid Philly'>
         <ul className={styles.ctaList}>
-          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta))}
-          {ctas.mainCTA && createCTA(ctas.mainCTA, true)}
+          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => <BigCTA cta={cta} classes={styles.secondaryCTA} />)}
+          {ctas.mainCTA && <BigCTA cta={ctas.mainCTA} classes={styles.mainCTA} />}
         </ul>
       </nav>
     </div>

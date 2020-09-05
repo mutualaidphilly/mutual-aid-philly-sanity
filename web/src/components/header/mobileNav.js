@@ -2,19 +2,8 @@ import React from 'react'
 import styles from './header.module.css'
 import {Link} from 'gatsby'
 import Icon from '../icon'
-
 import {cn} from '../../lib/helpers'
-const createCTA = (cta, isMain) => {
-  const classes = isMain ? styles.mainCTA : styles.secondaryCTA
-
-  return (
-    <li>
-      <a href={cta.href} className={classes}>
-        {cta.text}
-      </a>
-    </li>
-  )
-}
+import BigCTA from './bigCTAs'
 
 function scrollToTop () {
   document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -34,8 +23,8 @@ export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageLi
       </nav>
       <nav className={styles.ctaNav}>
         <ul>
-          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => createCTA(cta))}
-          {ctas.mainCTA && createCTA(ctas.mainCTA, true)}
+          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => <BigCTA cta={cta} classes={styles.secondaryCTA} />)}
+          {ctas.mainCTA && <BigCTA cta={ctas.mainCTA} classes={styles.mainCTA} />}
         </ul>
         <ul>
           <li key='home'>
