@@ -1,7 +1,4 @@
 import React from 'react'
-import useHover from '../../lib/useHover'
-import {Link} from 'gatsby'
-import {IoMdLink} from 'react-icons/io/'
 import styles from './heading.module.css'
 const GithubSlugger = require('github-slugger')
 const slugger = new GithubSlugger()
@@ -17,11 +14,9 @@ function createSlug (children) {
 function createHeading (headingLevel, classes, {children}) {
   const Title = headingLevel
   const slug = createSlug(children)
-  const [ref, hovered] = useHover()
 
-  return (<Title className={classes} id={slug} ref={ref}>
+  return (<Title className={classes} id={slug}>
     {children}
-    {hovered ? <Link to={`#${slug}`}><span><IoMdLink /></span></Link> : '' }
   </Title>)
 }
 
