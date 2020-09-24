@@ -12,11 +12,13 @@
 
 .footer {
   background-color: #FBECD7;
+  padding-bottom: 2rem;
 }
 
 .socialIconList {
   display: flex;
   align-items: center;
+  margin-top: 2rem;
   padding: 0;
   list-style: none;
 }
