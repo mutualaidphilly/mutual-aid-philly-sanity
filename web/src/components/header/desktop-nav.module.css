@@ -81,6 +81,11 @@
 .mainNavItem {
     font-size: 20px;
     font-weight: bold;
+    color: var(--color-cta--grey);
+}
+
+.mainNavItem:hover {
+    color: #000;
 }
 
 .siteTitleLink {
