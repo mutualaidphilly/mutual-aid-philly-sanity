@@ -20,6 +20,7 @@ p, .paragraph {
   max-font-size: 60px;
   min-line-height: 42px;
   max-line-height: 71px;
+  line-height: 1.1;
   margin: 1rem 0 0;
 }
 
@@ -30,7 +31,7 @@ p, .paragraph {
   max-font-size: 44px;
   min-line-height: 34px;
   max-line-height: 34px;
-  margin: 1.5rem 0 0.5rem;
+  margin: 1.5rem 0 -0.7rem;
 }
 
 .responsiveTitle3 {
@@ -40,7 +41,8 @@ p, .paragraph {
   max-font-size: 26px;
   min-line-height: 34px;
   max-line-height: 34px;
-  margin: 1rem 0 0.5rem;
+
+  margin: 2rem 0 0;
 }
 
 .responsiveTitle4 {
