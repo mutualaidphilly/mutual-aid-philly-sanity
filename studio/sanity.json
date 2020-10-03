@@ -5,7 +5,14 @@
   },
   "api": {
     "projectId": "so4c4cf3",
-    "dataset": "dev"
+    "dataset": "production"
+  },
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "dev"
+      }
+    }
   },
   "plugins": [
     "@sanity/base",
