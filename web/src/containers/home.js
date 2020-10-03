@@ -16,6 +16,7 @@ const HomeWrapper = props => {
       frontpage {
         _rawTitle
         _rawContent
+        description
       }
       _rawMainCta
       _rawSecondaryCtAs
@@ -32,8 +33,7 @@ const HomeWrapper = props => {
 
   const site = (data || {}).site
   const localizedData = localize(site, locale)
-  const title = localizedData.frontpage._rawTitle
-  const _rawContent = localizedData.frontpage._rawContent
+  const {_rawContent, _rawTitle, description} = localizedData.frontpage;
 
   if (!site) {
     throw new Error(
@@ -43,9 +43,9 @@ const HomeWrapper = props => {
 
   return (
     <>
-      <SEO lang={locale[0]} />
+      <SEO lang={locale[0]} description={description} />
       <Layout currentLocale={locale[0]} location={location} ctas={{mainCTA: localizedData._rawMainCta, secondaryCTAs: localizedData._rawSecondaryCtAs}}>
-        {_rawContent && <Page title={title} _rawContent={_rawContent} />}
+        {_rawContent && <Page title={_rawTitle} _rawContent={_rawContent} />}
       </Layout>
     </>
   )
