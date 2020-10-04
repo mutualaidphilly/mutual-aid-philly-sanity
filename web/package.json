@@ -38,7 +38,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.13.0",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.1",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.6.0",
     "postcss-responsive-type": "^1.0.0",
