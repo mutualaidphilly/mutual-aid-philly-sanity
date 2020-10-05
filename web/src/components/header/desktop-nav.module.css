@@ -2,10 +2,10 @@
 
 .desktopNav {
     width: 100%;
-    max-width: calc(100% - 2rem);
     margin-top: 1rem;
     display: none;
 
+    
     @media (--media-nav-breakpoint) {
         display: block;
     }
