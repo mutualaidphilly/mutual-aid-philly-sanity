@@ -17,7 +17,7 @@ export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageLi
       <button type='button' onClick={scrollToTop} className={cn(styles.darkCTA, styles.backToTopButton)}>Back to Top</button>
     </nav>
 
-    <nav className={cn(styles.nav, showNav && styles.showNav)}>
+    <nav className={cn(styles.mobileNav, showNav && styles.showNav)}>
       <nav className={styles.languageNav}>
         <ul className={styles.languageList}>{languageList}</ul>
       </nav>
