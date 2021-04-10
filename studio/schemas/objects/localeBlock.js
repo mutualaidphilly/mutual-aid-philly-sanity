@@ -40,7 +40,7 @@ export default {
         }
       },
       {type: 'hr'},
-      {type : 'googleFormEmbed'}
+      {type : 'googleFormEmbed'},
     ],
     fieldset: lang.id
   }))

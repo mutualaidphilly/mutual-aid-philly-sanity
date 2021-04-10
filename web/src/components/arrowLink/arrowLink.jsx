@@ -1,10 +1,11 @@
 import React from 'react'
-import styles from './arrowLink.module.css'
+import {arrowLink, arrowContainer} from './arrowLink.module.css'
+
 function ArrowLink ({href, children}) {
   return (
-    <span className={styles.arrowLink}>
+    <span className={arrowLink}>
       <a href={href}>{children}</a>
-      <span className={styles.arrowContainer}>
+      <span className={arrowContainer}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='33'
