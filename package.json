@@ -2,6 +2,8 @@
   "private": true,
   "name": "sanity-gatsby-portfolio",
   "version": "0.0.0",
+  "workspaces": ["web", "studio"],
+  
   "scripts": {
     "build": "lerna run build --parallel",
     "dev": "lerna run dev --parallel",

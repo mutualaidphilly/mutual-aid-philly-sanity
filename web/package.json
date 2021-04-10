@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "sanity-gatsby-portfolio-web",
+  "name": "web",
   "version": "1.0.1",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Ryan Killeen <ryan.killeen@hey.com>",
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
