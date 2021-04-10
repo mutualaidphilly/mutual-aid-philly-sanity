@@ -35,11 +35,12 @@ export default {
           ],
           annotations: [
             {type: 'externalLink'},
-            {type: 'arrowLink'}
+            {type: 'arrowLink'},
           ]
         }
       },
-      {type: 'hr'}
+      {type: 'hr'},
+      {type : 'googleFormEmbed'}
     ],
     fieldset: lang.id
   }))

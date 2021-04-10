@@ -19,6 +19,7 @@ import externalLink from './objects/externalLink'
 import hr from './objects/hr'
 import socialMediaLink from './objects/socialMediaLink'
 import contact from './objects/contact'
+import googleFormEmbed from './objects/googleFormEmbed'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,6 +36,7 @@ export default createSchema({
     hr,
     socialMediaLink,
     localeString,
+    googleFormEmbed,
     localeBlock,
     contact,
     twoColumnContent,

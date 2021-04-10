@@ -29,14 +29,15 @@ const serializers = {
           return BaseBlockContent.defaultSerializers.types.block(props)
       }
     },
-    hr: () => <hr />
+    hr: () => <hr />,
+    googleFormEmbed: ({node: {url}}) => url ? <iframe src={`${url}/viewform?embedded=true`} style={{width: '100%'}} height='462' frameBorder='0' marginHeight='0' marginWidth='0'>Loading…</iframe> : <p>{JSON.stringify(node)}</p>
   },
   marks: {
     arrowLink,
     externalLink: ({mark, children}) => {
       const {blank, href} = mark
       return blank
-        ? <a href={href} target='_blank' rel='noopener'>{children}</a>
+        ? <a href={href} target='_blank' rel='noopener noreferrer'>{children}</a>
         : <a href={href}>{children}</a>
     }
   }
