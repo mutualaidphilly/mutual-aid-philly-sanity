@@ -45,7 +45,7 @@
     "postcss-import": "^14.0.1",
     "postcss-preset-env": "^6.6.0",
     "postcss-responsive-type": "^1.0.0",
-    "prettier-eslint-cli": "^4.7.1",
+    "prettier-eslint-cli": "^5.0.1",
     "rimraf": "^3.0.2"
   }
 }
