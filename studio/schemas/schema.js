@@ -20,6 +20,8 @@ import hr from './objects/hr'
 import socialMediaLink from './objects/socialMediaLink'
 import contact from './objects/contact'
 import googleFormEmbed from './objects/googleFormEmbed'
+import googleMapEmbed from './objects/googleMapEmbed'
+import airtableFormEmbed from './objects/airtableFormEmbed'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,6 +39,8 @@ export default createSchema({
     socialMediaLink,
     localeString,
     googleFormEmbed,
+    googleMapEmbed,
+    airtableFormEmbed,
     localeBlock,
     contact,
     twoColumnContent,
