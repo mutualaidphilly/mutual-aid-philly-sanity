@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './header.module.css'
+import * as styles from './header.module.css'
 import {Link} from 'gatsby'
 import Icon from '../icon'
 import {cn} from '../../lib/helpers'
@@ -23,7 +23,7 @@ export default ({onHideNav, onShowNav, showNav, slugs, currentLocale, languageLi
       </nav>
       <nav className={styles.ctaNav}>
         <ul>
-          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => <BigCTA cta={cta} classes={styles.secondaryCTA} />)}
+          {ctas.secondaryCTAs && ctas.secondaryCTAs.map(cta => <BigCTA cta={cta} key={cta.href} classes={styles.secondaryCTA} />)}
           {ctas.mainCTA && <BigCTA cta={ctas.mainCTA} classes={styles.mainCTA} />}
         </ul>
         <ul>

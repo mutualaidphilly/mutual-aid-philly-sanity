@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './header/header'
 
 import '../styles/layout.css'
-import styles from './layout.module.css'
+import {content} from './layout.module.css'
 import Footer from './footer/Footer'
 
 const Layout = ({
@@ -29,7 +29,7 @@ const Layout = ({
       location={location}
       ctas={ctas}
     />
-    <div className={styles.content}>{children}</div>
+    <div className={content}>{children}</div>
     <Footer contactInfo={contactInfo} footerContent={footerContent} />
   </>
 )

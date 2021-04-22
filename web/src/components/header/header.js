@@ -1,7 +1,7 @@
 import {Link} from 'gatsby'
 import React from 'react'
 
-import styles from './header.module.css'
+import {root, wrapper, languageLink} from './header.module.css'
 import MobileNav from './mobileNav'
 import DesktopNav from './desktopNav'
 
@@ -18,7 +18,7 @@ const createLanguageLinks = (currentLocale, currentLocation) => {
       const url = currentLocation.replace(currentLocale, localeObj.locale)
       return (
         <li key={url}>
-          <Link to={url} className={styles.languageLink}>
+          <Link to={url} className={languageLink}>
             {localeObj.label}
           </Link>
         </li>
@@ -37,8 +37,8 @@ const Header = ({
   ctas
 }) => {
   return (
-    <div className={styles.root}>
-      <div className={styles.wrapper}>
+    <div className={root}>
+      <div className={wrapper}>
         <MobileNav
           onHideNav={onHideNav}
           onShowNav={onShowNav}

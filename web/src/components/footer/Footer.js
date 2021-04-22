@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from '../layout.module.css'
+// eslint-disable-next-line camelcase
+import {socialIconList, socialIconList__Item, footer, footerWrapper, footerColumn} from '../layout.module.css'
 import BlockContent from '../block-content'
 import FacebookIcon from './FacebookIcon'
-import TwitterIcon from './TwitterIcon'
 import InstagramIcon from './InstagramIcon'
 
 function Footer ({contactInfo, footerContent}) {
@@ -12,18 +12,15 @@ function Footer ({contactInfo, footerContent}) {
       SocialIcon: FacebookIcon,
       label: 'Mutual Aid Philly Facebook'
     },
-    // {
-    //   href: 'https://www.facebook.com/mutualaidphilly/',
-    //   SocialIcon: TwitterIcon
-    // },
     {
       href: 'https://www.instagram.com/mutualaidphilly/',
       SocialIcon: InstagramIcon,
       label: 'Mutual Aid Philly Instagram'
     }
   ].map((item, index) => (
-    <li key={index} className={styles.socialIconList__Item}>
-      <a href={item.href} target='_blank' rel='noopener'>
+    // eslint-disable-next-line camelcase
+    <li key={index} className={socialIconList__Item}>
+      <a href={item.href} target='_blank' rel='noopener noreferrer'>
         <span style={{
           position: 'absolute',
           left: '-10000px',
@@ -31,14 +28,16 @@ function Footer ({contactInfo, footerContent}) {
           width: '1px',
           height: '1px',
           overflow: 'hidden'
-        }}>{item.label}</span>
+        }}
+        >{item.label}
+        </span>
         <item.SocialIcon />
       </a>
     </li>))
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.footerColumn}>
+    <footer className={footer}>
+      <div className={footerWrapper}>
+        <div className={footerColumn}>
           <h1>Contact Us</h1>
           {contactInfo && (
             <nav>
@@ -48,13 +47,13 @@ function Footer ({contactInfo, footerContent}) {
               <div>
                 <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
               </div>
-              <ul className={styles.socialIconList} aria-label='Social media links'>
+              <ul className={socialIconList} aria-label='Social media links'>
                 {socialLinksList}
               </ul>
             </nav>
           )}
         </div>
-        <div className={styles.footerColumn}>
+        <div className={footerColumn}>
           {footerContent && <BlockContent blocks={footerContent[0] || []} />}
         </div>
       </div>

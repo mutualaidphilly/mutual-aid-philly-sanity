@@ -42,7 +42,7 @@ export default {
       {type: 'hr'},
       {type: 'googleFormEmbed'},
       {type: 'googleMapEmbed'},
-      {type: 'airtableFormEmbed'}
+      {type: 'airtableFormEmbed'} 
     ],
     fieldset: lang.id
   }))

@@ -1,14 +1,14 @@
 import React from 'react'
 import BlockContent from '../block-content'
-import styles from './twoColumnContent.module.css'
+import {column, twoColumnContentContainer} from './twoColumnContent.module.css'
 
 function TwoColumnContent ({columnOneContent, columnTwoContent}) {
   return (
-    <div className={styles.twoColumnContentContainer}>
-      <div className={styles.column}>
+    <div className={twoColumnContentContainer}>
+      <div className={column}>
         <BlockContent blocks={columnOneContent} />
       </div>
-      <div className={styles.column}>
+      <div className={column}>
         <BlockContent blocks={columnTwoContent} />
       </div>
     </div>
