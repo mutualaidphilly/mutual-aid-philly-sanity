@@ -30,7 +30,9 @@ const serializers = {
       }
     },
     hr: () => <hr />,
-    googleFormEmbed: ({node: {url}}) => url ? <iframe src={`${url}/viewform?embedded=true`} style={{width: '100%'}} height='462' frameBorder='0' marginHeight='0' marginWidth='0'>Loading…</iframe> : <p>{JSON.stringify(node)}</p>
+    googleFormEmbed: ({node: {url}}) => url && <iframe src={`${url}/viewform?embedded=true`} style={{width: '100%'}} height='462' frameBorder='0' marginHeight='0' marginWidth='0'>Loading…</iframe>,
+    airtableFormEmbed: ({node: {url}}) => url && <iframe src={`${url}`} style={{width: '100%', height: '60vh', border: 'none', marginTop: '1rem'}}>Loading…</iframe>,
+    googleMapEmbed: ({node: {url}}) => url && <iframe src={`${url}`} style={{width: '100%', height: '60vh', border: 'none', marginTop: '1rem'}}>Loading…</iframe>
   },
   marks: {
     arrowLink,
