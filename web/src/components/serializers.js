@@ -11,7 +11,7 @@ const arrowLink = ({mark, children}) => {
 
 const serializers = {
   types: {
-    figure: Figure,
+    image: Figure,
     block: props => {
       const {style = 'normal'} = props.node
       switch (style) {
