@@ -13,11 +13,12 @@ Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-i
 ## Quick start
 
 1. Clone this repository from your GitHub account
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the Studio and frontend locally
+2. `yarn` in the project root folder on local
+   - This project uses yarn workspaces. For the best dev experience, we recommend using `yarn`
+3. `yarn run dev` to start the Studio and frontend locally
    - Your Studio should be running on [http://localhost:3333](http://localhost:3333)
    - Your frontend should be running on [http://localhost:8000](http://localhost:8000)
-4. `npm run build` to build to production locally
+4. `yarn run build` to build to production locally
 
 ## Enable real-time content preview in development
 
@@ -29,7 +30,8 @@ If you want to disable the preview you can set `watchMode: false` in gatsby-con
 
 ## Deploy changes
 
-Netlify automatically deploys new changes commited to the `master` branch on GitHub. If you want to change the deployment branch you may do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+Netlify automatically deploys new changes commited to the `production` branch on GitHub, as well as a preview for every branch and PR.
+If you want to change the deployment branch you may do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
 
 ## Get help
 

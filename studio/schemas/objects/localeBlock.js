@@ -39,10 +39,13 @@ export default {
           ]
         }
       },
+      {type: 'image', fields: [
+        {title: 'Alt Text', name: 'alt', type:'string'}
+      ]},
       {type: 'hr'},
       {type: 'googleFormEmbed'},
       {type: 'googleMapEmbed'},
-      {type: 'airtableFormEmbed'} 
+      {type: 'airtableFormEmbed'}
     ],
     fieldset: lang.id
   }))

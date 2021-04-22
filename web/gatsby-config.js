@@ -33,6 +33,12 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        ...clientConfig.sanity,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'en',
