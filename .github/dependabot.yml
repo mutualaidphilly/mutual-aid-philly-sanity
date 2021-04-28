@@ -1,0 +1,54 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+  open-pull-requests-limit: 10
+  assignees:
+  - rykilleen
+  ignore:
+  - dependency-name: date-fns
+    versions:
+    - 2.16.1
+    - 2.20.1
+  - dependency-name: y18n
+    versions:
+    - 3.2.2
+  - dependency-name: elliptic
+    versions:
+    - 6.5.4
+  - dependency-name: gatsby-plugin-robots-txt
+    versions:
+    - 1.5.3
+    - 1.5.5
+  - dependency-name: socket.io
+    versions:
+    - 2.4.1
+  - dependency-name: "@sanity/core"
+    versions:
+    - 2.1.2
+  - dependency-name: "@sanity/base"
+    versions:
+    - 2.1.3
+  - dependency-name: ini
+    versions:
+    - 1.3.7
+  - dependency-name: "@sanity/components"
+    versions:
+    - 2.0.9
+  - dependency-name: object-path
+    versions:
+    - 0.11.5
+  - dependency-name: prettier-eslint-cli
+    versions:
+    - 5.0.0
+  - dependency-name: "@sanity/desk-tool"
+    versions:
+    - 1.150.8
+  - dependency-name: "@sanity/default-layout"
+    versions:
+    - 1.150.8
+  - dependency-name: babel-eslint
+    versions:
+    - 10.1.0
