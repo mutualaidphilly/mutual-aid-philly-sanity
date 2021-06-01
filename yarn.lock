@@ -866,13 +866,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
-  version "7.13.10"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.5.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.13.17"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.17.tgz#8966d1fc9593bf848602f0662d6b4d0069e3a7ec"
   integrity sha512-NCdgJEelPTSh+FEFylhnP1ylq848l1z9t9N0j1Lfbcw0+KXGjsTvUmkxy+voLLXB5SOKMbLLx4jxYliGrYQseA==
@@ -7999,9 +7993,9 @@ gatsby-plugin-page-creator@^3.2.0:
     lodash "^4.17.21"
 
 gatsby-plugin-postcss@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-4.2.0.tgz#45966bfbae9f3ef79e91c3fe5904c1e0bca873fb"
-  integrity sha512-RFyxN0zDi8UuQxvjF/WoFaNxfQkulCsyA6UtIfgs73QZj31VqOJ6bmtjJW2ct6zFeANOJ/nOczbr2nyBcMDnvQ==
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-4.6.0.tgz#fc45a3fecce818ee8e82143232724b8be20a58c8"
+  integrity sha512-yYRF2mPVwNVHDcL6yR97j0tf3MKgaPfWmfyC1s5Fp9VvIwOZ8w/sU88Dqnr+diGXarRry3MxwugNVuVLbp+Uaw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     postcss-loader "^4.1.0"
